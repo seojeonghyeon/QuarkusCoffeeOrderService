@@ -1,21 +1,15 @@
 package me.ronan.modules.point
 
 import jakarta.annotation.security.RolesAllowed
-import jakarta.enterprise.context.ApplicationScoped
 import jakarta.validation.Valid
 import jakarta.ws.rs.*
 import jakarta.ws.rs.core.Context
 import jakarta.ws.rs.core.MediaType
 import jakarta.ws.rs.core.Response
 import jakarta.ws.rs.core.SecurityContext
-import me.ronan.modules.member.CurrentMember
-import me.ronan.modules.member.Member
 import me.ronan.modules.vo.RequestAddPoint
 import me.ronan.modules.vo.ResponseAddPoint
 import me.ronan.modules.vo.ResponsePointResult
-import org.eclipse.microprofile.jwt.Claim
-import org.eclipse.microprofile.jwt.ClaimValue
-import org.eclipse.microprofile.jwt.Claims
 
 @Path(PointResource.ROOT)
 class PointResource(

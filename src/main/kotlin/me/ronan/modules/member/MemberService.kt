@@ -1,7 +1,6 @@
 package me.ronan.modules.member
 
 import jakarta.enterprise.context.ApplicationScoped
-import jakarta.persistence.EntityNotFoundException
 import jakarta.transaction.Transactional
 import me.ronan.infra.config.PasswordEncoder
 import me.ronan.infra.exception.LoginException
@@ -14,10 +13,6 @@ class MemberService(
     private val passwordEncoder: PasswordEncoder,
     private val memberRepository: MemberRepository,
 ) {
-    fun loadUserByUsername(emailOrMemberId: String): Member? {
-        return memberRepository.findByEmailOrMemberId(emailOrMemberId)
-    }
-
     fun hasEmail(email: String) : Boolean {
         return memberRepository.findByEmail(email) != null
     }

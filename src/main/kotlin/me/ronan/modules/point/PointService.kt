@@ -3,9 +3,6 @@ package me.ronan.modules.point
 import jakarta.ejb.NoSuchEntityException
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.transaction.Transactional
-import me.ronan.infra.exception.NoSuchPointException
-import me.ronan.infra.exception.ErrorCode
-import me.ronan.modules.member.Member
 import me.ronan.modules.member.MemberService
 
 @ApplicationScoped

@@ -6,16 +6,6 @@ import jakarta.enterprise.context.ApplicationScoped
 
 @ApplicationScoped
 class MemberRepository : PanacheRepository<Member> {
-    fun findByEmailOrMemberId(emailOrMemberId: String): Member? {
-        return find(
-            "SELECT m " +
-                    "FROM members m " +
-                    "WHERE m.memberId = :emailOrMemberId " +
-                    "OR m.email = :emailOrMemberId ",
-            Parameters.with("emailOrMemberId", emailOrMemberId))
-            .firstResult()
-    }
-
     fun findByMemberId(memberId: String): Member? {
         return find(
             "SELECT m " +

@@ -5,7 +5,6 @@ import io.smallrye.jwt.build.Jwt
 import io.smallrye.jwt.util.KeyUtils
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
-import jakarta.ws.rs.container.ContainerRequestContext
 import me.ronan.modules.member.Member
 import mu.KotlinLogging
 import org.eclipse.microprofile.config.inject.ConfigProperty
@@ -15,7 +14,6 @@ import java.util.*
 
 @ApplicationScoped
 class JwtTokenProvider{
-
     companion object {
         private val log = KotlinLogging.logger { }
     }
