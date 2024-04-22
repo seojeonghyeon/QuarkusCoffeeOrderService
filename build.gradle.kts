@@ -47,6 +47,15 @@ dependencies {
     implementation("io.jsonwebtoken:jjwt-jackson:0.11.5")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
+    implementation("io.quarkus:quarkus-vertx")
+    implementation("io.smallrye.reactive:smallrye-mutiny-vertx-web-client")
+    implementation("io.quarkus:quarkus-config-yaml")
+    implementation("jakarta.xml.bind:jakarta.xml.bind-api:4.0.0")
+    implementation("jakarta.mail:jakarta.mail-api:2.1.2")
+    implementation("io.quarkus:quarkus-qute")
+    implementation("io.quarkus:quarkus-mailer")
+    implementation("io.quarkus:quarkus-resteasy-qute")
+
     testImplementation("io.quarkus:quarkus-junit5")
 }
 

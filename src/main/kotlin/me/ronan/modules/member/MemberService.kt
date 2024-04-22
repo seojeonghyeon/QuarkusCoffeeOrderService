@@ -1,5 +1,6 @@
 package me.ronan.modules.member
 
+import io.vertx.core.eventbus.EventBus
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.transaction.Transactional
 import me.ronan.infra.config.PasswordEncoder
@@ -12,6 +13,7 @@ import me.ronan.modules.vo.RequestMemberLogin
 class MemberService(
     private val passwordEncoder: PasswordEncoder,
     private val memberRepository: MemberRepository,
+    private val bus: EventBus,
 ) {
     fun hasEmail(email: String) : Boolean {
         return memberRepository.findByEmail(email) != null
@@ -21,6 +23,7 @@ class MemberService(
     fun register(email: String, encryptedPwdDto: PasswordDto, encryptedSimplePwdDto: PasswordDto): Member {
         val member = Member.createUserMember(email, encryptedPwdDto, encryptedSimplePwdDto)
         memberRepository.persist(member)
+        bus.send("MemberCreatedEvent", member)
         return member
     }
 

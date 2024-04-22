@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee Order Service</title>
+</head>
+<body>
+<div>
+    <p>안녕하세요. <span>{name}</span>님</p>
+    <br>
+    <h2>{message}</h2>
+
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>충전 상태</th>
+                <th>총 현재 Point</th>
+                <th>이전의 Point</th>
+                <th>충전한 Point</th>
+            </tr>
+            </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p>{status}</p>
+                        </td>
+                        <td>
+                            <p>{totalPoint}</p>
+                        </td>
+                        <td>
+                            <p>{currentPoint}</p>
+                        </td>
+                        <td>
+                            <p>{addPoint}</p>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <small text="${host}"></small>
+    </div>
+</div>
+<br>
+</body>
+</html>
